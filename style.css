@@ -56,13 +56,16 @@ main {
 
  .register {
      display: flex;
+ }
+
+ .btn {
+     width: 245px;
+     height: 42px;
      color: #ffffff;
  }
 
- .facebook {
+.facebook {
      background-color: #255A9B;
-     width: 245px;
-     height: 42px;
      display: flex;
  }
 
@@ -72,7 +75,7 @@ main {
      height: 40px;
  }
 
- .facebook p {
+.facebook p {
      margin:  7px auto auto 10px;
      padding: 5px;
      font-size: 15px;
@@ -81,8 +84,6 @@ main {
  .linkedin {
      background-color: #0076B6;
      margin-left: 36px;
-     width: 245px;
-     height: 42px;
      display: flex;
  }
 
@@ -99,64 +100,77 @@ main {
  }
 
  .or {
-     margin-top: 40px;
-     margin-left: 140px;
+     display: flex;
+     justify-content:  center;
+     align-items: center;
  }
  .or p {
+     position: relative;
+     margin-right: 77px;
+     margin-top: 30px;
+     top: 7px;
      width: 18px;
      height: 50px;
-     display: inline-block;
-     text-align: center;
      font-size: 12px;
-     color: #312e2e;
+     color: #413e3e;;
  }
- .line {
-     display: inline-block;
-     border-bottom: 1px solid #cfcece;
-     width: 109px;
-     height: 0;
-     margin-bottom: 5px;
+ .or p:before{
+     position: absolute;
+     content: '';
+     width: 100px;
+     border-bottom: 1px solid #c1b9b9;
+     right: 119%;
+     top: 16%;
  }
+
+.or p:after{
+    position: absolute;
+    content: '';
+    width: 100px;
+    border-bottom: 1px solid #c1b9b9;
+    left: 144%;
+    top: 16%;
+}
 
  form {
     display: flex;
  }
 
- .myform input {
+ .registration input {
      width: 232px;
      height: 53px;
      font-size: 15px;
      padding-left: 10px;
  }
 
- .form-1 {
+ .Email_form {
      position: relative;
  }
 
- .form-1 input {
+ .Email_form  input {
      border:none;
      border: 1px solid gray;
      border-radius: 0 3px 0 0;
 
 
 }
- .form-1 input:focus {
+ .Email_form input:focus {
     outline: none;
     border-left: 2px solid #47abed;
  }
 
-.form-2 {
+.Phone_form {
     position: relative;
     margin-left: 36px;
 }
 
-.form-2 input {
+.Phone_form input {
     border:none;
     border: 1px solid gray;
     border-radius: 0 0 3px 3px;
 }
 
-.form-2 input:focus {
+.Phone_form input:focus {
   outline: none;
   border-left: 2px solid #47abed;
 }
@@ -195,26 +209,39 @@ main {
 .tabs_items {
     margin-top: 30px;
     display: flex;
+    position: relative;
 }
 
 .tabs_item {
-    width: 100px;
-    height: 50px;
-    padding: 5px 35px 0 0;
+    padding: 5px 42px 0 18px;
     text-decoration: none;
+    text-align: center;
 }
 
-.tabs_item::before {
+.tabs_item:before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border: 2px solid gray;
+    border-radius: 50%;
+    position: absolute;
+    top: 11px;
+    margin-left: -17px;
+    border-color: rgb(82, 113, 250);
 
 }
 
 .tabs-item:nth-child(1) {
-    margin:0;
+    margin:0 0 0 20px;
 }
 .tabs-item:last-child {
     padding:0;
 }
 
+
+a {
+    color: black
+}
 
 a:visited{
     color: black;
@@ -239,15 +266,19 @@ a:visited{
 }
 
 .tabs_block:nth-child(1) {
+    top: 10px; 
     margin: 0px;
 }
 .tabs_block:nth-child(2) {
+   top: 10px; 
    left: 120px;
 }
 .tabs_block:nth-child(3) {
+    top: 10px; 
     left: 240px;
 }
 .tabs_block:nth-child(4) {
+    top: 10px; 
     left: 300px;
 }
 
@@ -275,16 +306,147 @@ a:visited{
     color: #47abed;
 }
 
+.create_field {
+    display: flex;
+}
+
 .create {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 63px;
-    width: 246px;
-    height: 40px;
-    color: #ffffff;
     background-color: #0092E1;
+    margin-top: 63px;
     border-radius: 5px;
     margin-left: 6px;
+}
+
+@media all and (max-width: 1024px) {
+    main {
+        max-width: 900px;
+        display: flex;
+        justify-content: center;
+        margin: 50px auto;
+        border-radius: 0 0 35px 35px;
+    }
+    
+    .main_page {
+        width: 900px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .left_bg {
+        display: none;;
+    }
+
+    .right_content {
+        float: left;
+    }
+
+    .inform {
+        padding-top: 86px;
+    }
+
+    .create_field {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .create {
+        margin-right: 65px;
+    }
+}
+
+@media all and (max-width: 768px) {
+    main {
+        max-width: 600px;
+        display: flex;
+        justify-content: center;
+        margin: 50px auto;
+    }
+
+    .create_field {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h1 {
+        margin-left: 152px;
+        font-size: 30px;
+    }
+    h4 {
+        margin-left: 50px;
+        
+    }
+}
+
+@media all and (max-width: 600px) {
+    .register {
+        display: block;
+        position: relative;
+        right: 21px;
+    }
+
+    .btn {
+        width: 300px;
+        height: 70px;
+        border-radius: 10px;
+    }
+
+    .facebook {
+        margin: 10px 0 10px 142px;
+
+    }
+    .linkedin {
+        margin: 10px 0 10px 142px;
+    }
+
+    .facebook p {
+        margin: 7px auto auto 10px;
+        padding: 14px;
+        font-size: 20px;
+    }
+
+    .facebook img {
+        margin-left: 11px;
+        margin-top: 14px;
+        width: 30px;
+        height: 40px;
+    }
+
+    .linkedin p {
+        margin: 7px auto auto 10px;
+        padding: 14px;
+        font-size: 20px;
+    }
+
+    .linkedin img {
+        margin-left: 11px;
+        margin-top: 14px;
+        width: 30px;
+        height: 40px;
+    }
+
+    .create_field {
+        position: relative;
+        bottom: 28px;
+    }
+
+    form {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        right: 18px;
+    }
+
+    .or {
+        position: relative;
+        left: 17px;
+    }
+
+    main {
+        margin: 10px 0 0 0;
+    }
 }
 
